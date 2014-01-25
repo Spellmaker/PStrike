@@ -28,12 +28,27 @@ public class ControlPlayer : MonoBehaviour {
 	private bool punching = false;
 	private bool kicking = false;
 
+	private GameObject armobject;
+	private GameObject legobject;
+
 	private Animator anim;					// Reference to the player's animator component.
 
 	void Awake()
 	{
 		// Setting up references.
 		groundCheck = transform.Find("groundCheck");
+
+		Transform[] allChildren = gameObject.GetComponentsInChildren<Transform>();
+ 
+		foreach (Transform child in allChildren)
+		{
+			if (child.gameObject.tag == "ArmCollider"){
+				armobject = child.gameObject;
+			}
+			else if(child.gameObject.tag == "LegCollider"){
+				legobject = child.gameObject;
+			}
+		}
 
 		anim = GetComponent<Animator>();
 	}
@@ -146,8 +161,9 @@ public class ControlPlayer : MonoBehaviour {
 
 	void TriggerPunch(){
 		punching = !punching;
+		armobject.collider2D.enabled = punching;
 
-		Transform[] allChildren = gameObject.GetComponentsInChildren<Transform>();
+		/*Transform[] allChildren = gameObject.GetComponentsInChildren<Transform>();
  
 		foreach (Transform child in allChildren)
 		{
@@ -156,13 +172,14 @@ public class ControlPlayer : MonoBehaviour {
 				Debug.Log("object found");
 				break;
 			}
-		}
+		}*/
 	}
 
 	void TriggerKick(){
 		kicking = !kicking;
+		legobject.collider2D.enabled = kicking;
 
-		Transform[] allChildren = gameObject.GetComponentsInChildren<Transform>();
+		/*Transform[] allChildren = gameObject.GetComponentsInChildren<Transform>();
  
 		foreach (Transform child in allChildren)
 		{
@@ -171,6 +188,6 @@ public class ControlPlayer : MonoBehaviour {
 				Debug.Log("object found");
 				break;
 			}
-		}
+		}*/
 	}
 }

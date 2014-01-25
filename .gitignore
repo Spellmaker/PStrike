@@ -215,11 +215,10 @@ pip-log.txt
 .mr.developer.cfg
 
 
-# Unity3D .gitignore file.
-# Store this file at the root of your local repository.
-.DS_Store
-Library
-Temp
-*.csproj
-*.pidb
-*.sln 
+# =============== #
+# Unity generated #
+# =============== #
+Temp/
+Obj/
+UnityGenerated/
+Library/
