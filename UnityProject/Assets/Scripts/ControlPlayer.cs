@@ -25,6 +25,9 @@ public class ControlPlayer : MonoBehaviour {
 	private bool jump = false;
 	private bool iscrouching = false;
 
+	private bool punching = false;
+	private bool kicking = false;
+
 	private Animator anim;					// Reference to the player's animator component.
 
 	void Awake()
@@ -142,8 +145,32 @@ public class ControlPlayer : MonoBehaviour {
 	}
 
 	void TriggerPunch(){
+		punching = !punching;
+
+		Transform[] allChildren = gameObject.GetComponentsInChildren<Transform>();
+ 
+		foreach (Transform child in allChildren)
+		{
+			if (child.gameObject.tag == "ArmCollider"){
+				child.gameObject.collider2D.enabled = punching;
+				Debug.Log("object found");
+				break;
+			}
+		}
 	}
 
 	void TriggerKick(){
+		kicking = !kicking;
+
+		Transform[] allChildren = gameObject.GetComponentsInChildren<Transform>();
+ 
+		foreach (Transform child in allChildren)
+		{
+			if (child.gameObject.tag == "LegCollider"){
+				child.gameObject.collider2D.enabled = kicking;
+				Debug.Log("object found");
+				break;
+			}
+		}
 	}
 }

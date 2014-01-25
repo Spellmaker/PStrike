@@ -1866,7 +1866,7 @@ AnimationClip:
     classID: 4
     script: {fileID: 0}
   m_Events:
-  - time: .400000006
+  - time: .333333343
     functionName: TriggerPunch
     data: 
     objectReferenceParameter: {fileID: 0}

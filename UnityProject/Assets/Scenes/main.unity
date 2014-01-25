@@ -261,8 +261,8 @@ MonoBehaviour:
   - {fileID: 100002, guid: fcf9a5a749ee32049896db5db89742e2, type: 2}
   - {fileID: 100000, guid: 6514cb22b8042d049902256d4659dddc, type: 2}
   characters:
-  - {fileID: 100002, guid: 314680191dfd32840abc49a105b76232, type: 2}
-  - {fileID: 100002, guid: 314680191dfd32840abc49a105b76232, type: 2}
+  - {fileID: 100028, guid: 314680191dfd32840abc49a105b76232, type: 2}
+  - {fileID: 100028, guid: 314680191dfd32840abc49a105b76232, type: 2}
   leftposition: {fileID: 218122370}
   rightposition: {fileID: 74923224}
   leftspawn: {fileID: 999303569}
